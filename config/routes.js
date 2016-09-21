@@ -34,7 +34,33 @@ module.exports.routes = {
 
   '/': {
     view: 'homepage'
+  },
+  'GET /books': {
+    controller: 'BookController',
+    action: 'getBooks'
+  },
+  'GET /books/:id': {
+    controller: 'BookController',
+    action: 'getBook'
+  },
+  'POST /books': {
+    controller: 'BookController',
+    action: 'addBook'
+  },
+  'PUT /books/:id': {
+    controller: 'BookController',
+    action: 'updateBook'
+  },
+  'DELETE /books/:id': {
+    controller: 'BookController',
+    action: 'removeBook'
   }
+  // 'POST /users': {
+  //   controller: 'UserController',
+  //   action: 'signup'
+  // }
+
+
 
   /***************************************************************************
   *                                                                          *
@@ -45,5 +71,6 @@ module.exports.routes = {
   * for configuration options and examples.                                  *
   *                                                                          *
   ***************************************************************************/
+
 
 };
