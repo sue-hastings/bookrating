@@ -9,18 +9,17 @@ module.exports = {
 
   attributes: {
     name: {
-      type: String
+      type: 'string'
     },
     author: {
-      type: String
+      type: 'string'
     },
     pictureUrl: {
-      type: String
+      type: 'string'
     },
     isDeleted: {
-      type: Boolean,
+      type: 'boolean',
       defaultsTo: false
     }
   }
 };
-

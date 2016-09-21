@@ -3,25 +3,25 @@ var bcrypt = require('bcrypt');
 module.exports = {
     attributes: {
         username: {
-            type: String,
+            type: 'string',
             required: true
         },
         firstname: {
-            type: String,
+            type: 'string',
             required: true
         },
         lastname: {
-            type: String,
+            type: 'string',
             required: true
         },
         email: {
-            type: String,
+            type: 'string',
             email: true,
             required: true,
             unique: true
         },
         encryptedPassword: {
-            type: String
+            type: 'string'
         },
         toJSON: function() {
             var obj = this.toObject();
@@ -40,8 +40,8 @@ module.exports = {
                 }
                 values.encryptedPassword = hash;
                 next();
-            })
-        })
+            });
+        });
     },
     comparePassword: function(password, user, cb) {
         bcrypt.comparePassword(password, user.encryptedPassword, function(err, match) {
@@ -53,6 +53,6 @@ module.exports = {
             } else {
                 cb(err);
             }
-        })
+        });
     }
 };

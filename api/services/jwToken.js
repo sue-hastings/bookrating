@@ -1,24 +1,24 @@
-// var jwt = require('jsonwebtoken'),
-//     tokenSecret = 'appsecret';
+var jwt = require('jsonwebtoken'),
+    tokenSecret = 'appsecret';
 
-// module.exports.issue = function(payload) {
-//     return jwt.sign(
-//         payload,
-//         tokenSecret, {
-//             expiresInMinutes: 180
-//         }
-//     );
-// };
+module.exports.issue = function(payload) {
+    return jwt.sign(
+        payload,
+        tokenSecret, {
+            expiresInMinutes: 180
+        }
+    );
+};
 
-// module.exports.verify = function(token, callback) {
-//     return jwt.verify(
-//         token,
-//         tokenSecret, {},
-//         function(err, decodedtoken) {
-//             if (err) {
-//                 throw err;
-//             }
-//             return decodedtoken;
-//         }
-//     );
-// };
+module.exports.verify = function(token, callback) {
+    return jwt.verify(
+        token,
+        tokenSecret, {},
+        function(err, decodedtoken) {
+            if (err) {
+                throw err;
+            }
+            return decodedtoken;
+        }
+    );
+};

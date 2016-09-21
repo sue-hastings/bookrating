@@ -1,4 +1,4 @@
-var Users = '../models/User.js'
+var Users = '../models/User.js';
 
 module.exports = {
     index: function(req, res) {
@@ -14,10 +14,10 @@ module.exports = {
             }
             Users.comparePassword(password, user, function(err, valid) {
                 if (err) {
-                    return res.json(403, { err: 'forbidden' })
+                    return res.json(403, { err: 'forbidden' });
                 }
                 if (!valid) {
-                    return res.json(403, { err: 'invalid email or password' })
+                    return res.json(403, { err: 'invalid email or password' });
                 } else {
                     res.json({
                         user: user,
@@ -25,6 +25,6 @@ module.exports = {
                     });
                 }
             });
-        })
+        });
     }
 };

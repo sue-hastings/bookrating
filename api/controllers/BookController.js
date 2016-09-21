@@ -11,7 +11,7 @@ module.exports = {
             name: req.body.name,
             author: req.body.author,
             pictureUrl: req.body.pictureUrl
-        }
+        };
         BookService.addBook(bookdetails, function(book) {
             res.json(book);
         });
@@ -24,7 +24,7 @@ module.exports = {
     getBook: function(req, res) {
         BookService.getBook(req.params.id, function(book) {
             res.json(book);
-        })
+        });
     },
     updateBook: function(req, res) {
         var id = req.params.id;
@@ -32,10 +32,10 @@ module.exports = {
             name: req.body.name,
             author: req.body.author,
             pictureUrl: req.body.pictureUrl
-        }
+        };
         BookService.updateBook(id, bookdetails, function(book) {
             res.json(book);
-        })
+        });
     },
     removeBook: function(req, res) {
         var id = req.params.id;
