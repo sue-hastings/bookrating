@@ -1,0 +1,89 @@
+@font-face {
+   font-family: Raleway;
+   src: url('../fonts/raleway/raleway_thin-webfont.woff');
+}
+
+body {
+  font-family: Raleway;
+}
+
+.mt {
+  margin-top: 50px; 
+}
+
+.mt-lg {
+  margin-top: 80px;
+}
+
+.mb-sm {
+  margin-bottom: 25px;
+}
+
+.bg {
+  background: #C9B7AD;
+}
+
+.fg {
+  color: #FFFFFF;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+.left {
+  text-align: left;
+}
+
+.title {
+  font-family: Raleway;
+  font-size: 800%;
+  color: #C9B7AD;
+  margin: auto;
+  text-align: center;
+}
+
+.inner {
+  padding: 5px;
+}
+
+.book-author {
+  display: block; 
+  margin-top: -12px; 
+  font-size: 13px;
+}
+
+.book-description {
+  font-family: serif; 
+  font-size: 13px; 
+  font-weight: normal; 
+  text-align: justify;
+}
+
+.book-reviews {
+  margin-bottom: 10px; 
+  padding: 6px; 
+  color: #000000; 
+  font-family: Raleway; 
+  border-radius: 4px;
+}
+
+.book-total {
+  font-family: Raleway;
+  font-size: 12px;
+  color: #000000;
+  margin: auto;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 400px) {
+  .title { font-size: 400%; };
+}

@@ -1,0 +1,65 @@
+[
+  {
+    "id": "1",
+    "title": "The Girl on the Train",
+    "author": "Paula Hawkins",
+    "description": "Rachel takes the same commuter train every morning and night. Every day she rattles down the track, flashes past a stretch of cozy suburban homes, and stops at the signal that allows her to daily watch the same couple breakfasting on their deck. She’s even started to feel like she knows them. Jess and Jason, she calls them. Their life—as she sees it—is perfect. Not unlike the life she recently lost.",
+    "image": "/images/the-girl-on-the-train.jpg"
+  },
+  {
+    "id": "2",
+    "title": "The Fault in Our Stars",
+    "author": "John Green",
+    "description": "Despite the tumor-shrinking medical miracle that has bought her a few years, Hazel has never been anything but terminal, her final chapter inscribed upon diagnosis. But when a gorgeous plot twist named Augustus Waters suddenly appears at Cancer Kid Support Group, Hazel’s story is about to be completely rewritten. \nInsightful, bold, irreverent, and raw, The Fault in Our Stars is award-winning-author John Green’s most ambitious and heartbreaking work yet, brilliantly exploring the funny, thrilling, and tragic business of being alive and in love.",
+    "image": "/images/the-faults-in-our-stars.jpg"
+  },
+  {
+    "id": "3",
+    "title": "Divergent (Divergent Series)",
+    "author": "Veronica Roth",
+    "description": "This first book in Veronica Roth's #1 New York Times bestselling Divergent trilogy is the novel that inspired the major motion picture starring Shailene Woodley, Theo James, and Kate Winslet. This dystopian series set in a futuristic Chicago has captured the hearts of millions of teen and adult readers. \nPerfect for fans of the Hunger Games and Maze Runner series, Divergent and its sequels, Insurgent and Allegiant—plus Four: A Divergent Collection, four stories told from the perspective of the character Tobias—are the gripping story of a dystopian world transformed by courage, self-sacrifice, and love. Fans of the Divergent movie will find the book packed with just as much emotional depth and exhilarating action as the film, all told in beautiful, rich language. \nThe paperback edition includes bonus materials created by Veronica Roth, including her essays on Utopian worlds and how she named the factions, writing tips, a Q&A, a Divergent playlist, faction manifestos, and an excerpt from Insurgent.",
+    "image": "/images/divergent.jpg"
+  },
+  {
+    "id": "4",
+    "title": "Into Thin Air: A Personal Account of the Mt. Everest ",
+    "author": "Jon Krakauer",
+    "description": "A bank of clouds was assembling on the not-so-distant horizon, but journalist-mountaineer Jon Krakauer, standing on the summit of Mt. Everest, saw nothing that 'suggested that a murderous storm was bearing down.' He was wrong. The storm, which claimed five lives and left countless more--including Krakauer's--in guilt-ridden disarray, would also provide the impetus for Into Thin Air, Krakauer's epic account of the May 1996 disaster./nBy writing Into Thin Air, Krakauer may have hoped to exorcise some of his own demons and lay to rest some of the painful questions that still surround the event. He takes great pains to provide a balanced picture of the people and events he witnessed and gives due credit to the tireless and dedicated Sherpas. He also avoids blasting easy targets such as Sandy Pittman, the wealthy socialite who brought an espresso maker along on the expedition. Krakauer's highly personal inquiry into the catastrophe provides a great deal of insight into what went wrong. But for Krakauer himself, further interviews and investigations only lead him to the conclusion that his perceived failures were directly responsible for a fellow climber's death. Clearly, Krakauer remains haunted by the disaster, and although he relates a number of incidents in which he acted selflessly and even heroically, he seems unable to view those instances objectively. In the end, despite his evenhanded and even generous assessment of others' actions, he reserves a full measure of vitriol for himself.",
+    "image": "/images/into-thin-air.jpg"
+  },
+  {
+    "id": "5",
+    "title": "A Walk in the Woods: Rediscovering America on the Appalachian Trail",
+    "author": "Bill Bryson ",
+    "description": "The Appalachian Trail trail stretches from Georgia to Maine and covers some of the most breathtaking terrain in America–majestic mountains, silent forests, sparking lakes. If you’re going to take a hike, it’s probably the place to go. And Bill Bryson is surely the most entertaining guide you’ll find. He introduces us to the history and ecology of the trail and to some of the other hardy (or just foolhardy) folks he meets along the way–and a couple of bears. Already a classic, A Walk in the Woods will make you long for the great outdoors (or at least a comfortable chair to sit and read in).",
+    "image": "/images/rediscovering.jpg"
+  },
+  {
+    "id": "6",
+    "title": "Steve Jobs",
+    "author": "Walter Isaacson",
+    "description": "Walter Isaacson’s “enthralling” (The New Yorker) worldwide bestselling biography of Apple co-founder Steve Jobs—the inspiration for the movie Steve Jobs starring Michael Fassbender, Kate Winslet, Seth Rogen, and Jeff Daniels, directed by Danny Boyle with a screenplay by Aaron Sorkin.\nBased on more than forty interviews with Steve Jobs conducted over two years—as well as interviews with more than 100 family members, friends, adversaries, competitors, and colleagues—Walter Isaacson has written a riveting story of the roller-coaster life and searingly intense personality of a creative entrepreneur whose passion for perfection and ferocious drive revolutionized six industries: personal computers, animated movies, music, phones, tablet computing, and digital publishing. Isaacson’s portrait touched millions of readers.\nAt a time when America is seeking ways to sustain its innovative edge, Jobs stands as the ultimate icon of inventiveness and applied imagination. He knew that the best way to create value in the twenty-first century was to connect creativity with technology. He built a company where leaps of the imagination were combined with remarkable feats of engineering.\nAlthough Jobs cooperated with the author, he asked for no control over what was written. He put nothing off-limits. He encouraged the people he knew to speak honestly. He himself spoke candidly about the people he worked with and competed against.\nHis friends, foes, and colleagues offer an unvarnished view of the passions, perfectionism, obsessions, artistry, devilry, and compulsion for control that shaped his approach to business and the innovative products that resulted.\nHis tale is instructive and cautionary, filled with lessons about innovation, character, leadership, and values.",
+    "image": "/images/steve-jobs.jpg"
+  },
+  {
+    "id": "7",
+    "title": "The Immortal Life of Henrietta Lacks",
+    "author": "Rebecca Skloot",
+    "description": "Her name was Henrietta Lacks, but scientists know her as HeLa. She was a poor black tobacco farmer whose cells—taken without her knowledge in 1951—became one of the most important tools in medicine, vital for developing the polio vaccine, cloning, gene mapping, and more. Henrietta's cells have been bought and sold by the billions, yet she remains virtually unknown, and her family can't afford health insurance. This phenomenal New York Times bestseller tells a riveting story of the collision between ethics, race, and medicine; of scientific discovery and faith healing; and of a daughter consumed with questions about the mother she never knew.",
+    "image": "/images/immortal.jpg"
+  },
+  {
+    "id": "8",
+    "title": "Becoming Nicole: The Transformation of an American Family",
+    "author": "Amy Ellis Nutt",
+    "description": "When Wayne and Kelly Maines adopted identical twin boys, they thought their lives were complete. But it wasn’t long before they noticed a marked difference between Jonas and his brother, Wyatt. Jonas preferred sports and trucks and many of the things little boys were “supposed” to like; but Wyatt liked princess dolls and dress-up and playing Little Mermaid. By the time the twins were toddlers, confusion over Wyatt’s insistence that he was female began to tear the family apart. In the years that followed, the Maineses came to question their long-held views on gender and identity, to accept and embrace Wyatt’s transition to Nicole, and to undergo an emotionally wrenching transformation of their own that would change all their lives forever.\nBecoming Nicole chronicles a journey that could have destroyed a family but instead brought it closer together. It’s the story of a mother whose instincts told her that her child needed love and acceptance, not ostracism and disapproval; of a Republican, Air Force veteran father who overcame his deepest fears to become a vocal advocate for trans rights; of a loving brother who bravely stuck up for his twin sister; and of a town forced to confront its prejudices, a school compelled to rewrite its rules, and a courageous community of transgender activists determined to make their voices heard. Ultimately, Becoming Nicole is the story of an extraordinary girl who fought for the right to be herself.\nGranted wide-ranging access to personal diaries, home videos, clinical journals, legal documents, medical records, and the Maineses themselves, Amy Ellis Nutt spent almost four years reporting this immersive account of an American family confronting an issue that is at the center of today’s cultural debate. Becoming Nicole will resonate with anyone who’s ever raised a child, felt at odds with society’s conventions and norms, or had to embrace life when it plays out unexpectedly. It’s a story of standing up for your beliefs and yourself—and it will inspire all of us to do the same.",
+    "image": "/images/becoming-nicole.jpg"
+  },
+  {
+    "id": "9",
+    "title": "Three Cups of Tea: One Man's Mission to Promote Peace - One School at a Time",
+    "author": "Greg Mortenson",
+    "description": "The astonishing, uplifting story of a real-life Indiana Jones and his humanitarian campaign to use education to combat terrorism in the Taliban’s backyard. Anyone who despairs of the individual’s power to change lives has to read the story of Greg Mortenson, a homeless mountaineer who, following a 1993 climb of Pakistan’s treacherous K2, was inspired by a chance encounter with impoverished mountain villagers and promised to build them a school. Over the next decade he built fifty-five schools—especially for girls—that offer a balanced education in one of the most isolated and dangerous regions on earth. As it chronicles Mortenson’s quest, which has brought him into conflict with both enraged Islamists and uncomprehending Americans, Three Cups of Tea combines adventure with a celebration of the humanitarian spirit.",
+    "image": "/images/three-cups.jpg"
+  }
+]
