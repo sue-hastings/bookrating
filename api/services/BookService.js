@@ -18,7 +18,6 @@ module.exports = {
       next(book);
     });
   },
-
   addBook: function(bookdetails, next) {
     var toOmit = ['isDeleted'];
     Book.create(bookdetails).exec(function(err, book) {
