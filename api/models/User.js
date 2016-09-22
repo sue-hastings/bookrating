@@ -18,12 +18,10 @@ module.exports = {
             required: true
         },
         email: {
-
             type: 'email',
             required: 'true',
             unique: true, // Yes unique one
             required: true,
-
         },
         encryptedPassword: {
             type: 'string'

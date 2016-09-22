@@ -14,15 +14,15 @@ module.exports = {
             model: 'user'
         },
         description: {
-          type: 'string',
-          defaultsTo: ''
+            type: 'string',
+            defaultsTo: ''
         },
         pictureUrl: {
             type: 'string'
         },
         ratings: {
-          collection: 'rating',
-          via: 'book'
+            collection: 'rating',
+            via: 'book'
         },
         isDeleted: {
             type: 'boolean',
@@ -30,17 +30,17 @@ module.exports = {
         }
     },
 
-    upvotes: function(){
-      var upvotes = _.filter(this.ratings, function(rating) {
-        return rating.ratingType === 'upvote';
-      });
-      return upvotes;
+    upvotes: function() {
+        var upvotes = _.filter(this.ratings, function(rating) {
+            return rating.ratingType === 'upvote';
+        });
+        return upvotes;
     },
 
-    downvotes: function(){
-      var downvotes = _.filter(this.ratings, function(rating) {
-        return rating.ratingType === 'downvote';
-      });
-      return downvotes;
+    downvotes: function() {
+        var downvotes = _.filter(this.ratings, function(rating) {
+            return rating.ratingType === 'downvote';
+        });
+        return downvotes;
     }
 };
