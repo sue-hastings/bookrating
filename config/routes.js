@@ -22,58 +22,66 @@
 
 module.exports.routes = {
 
-  /***************************************************************************
-  *                                                                          *
-  * Make the view located at `views/homepage.ejs` (or `views/homepage.jade`, *
-  * etc. depending on your default view engine) your home page.              *
-  *                                                                          *
-  * (Alternatively, remove this and add an `index.html` file in your         *
-  * `assets` directory)                                                      *
-  *                                                                          *
-  ***************************************************************************/
+    /***************************************************************************
+     *                                                                          *
+     * Make the view located at `views/homepage.ejs` (or `views/homepage.jade`, *
+     * etc. depending on your default view engine) your home page.              *
+     *                                                                          *
+     * (Alternatively, remove this and add an `index.html` file in your         *
+     * `assets` directory)                                                      *
+     *                                                                          *
+     ***************************************************************************/
 
-  '/': {
-    view: 'homepage'
-  },
-  'GET /books': {
-    controller: 'BookController',
-    action: 'getBooks'
-  },
-  'GET /books/:id': {
-    controller: 'BookController',
-    action: 'getBook'
-  },
-  'POST /books': {
-    controller: 'BookController',
-    action: 'addBook'
-  },
-  'PUT /books/:id': {
-    controller: 'BookController',
-    action: 'updateBook'
-  },
-  'DELETE /books/:id': {
-    controller: 'BookController',
-    action: 'removeBook'
-  },
-  'POST /users': {
-    controller: 'UserController',
-    action: 'signup'
-  },
-  'POST /users/login': {
-    controller: 'AuthController',
-    action: 'index'
-  }
+    '/': {
+        view: 'homepage'
+    },
+    'GET /books': {
+        controller: 'BookController',
+        action: 'getBooks'
+    },
+    'GET /books/:id': {
+        controller: 'BookController',
+        action: 'getBook'
+    },
+    'POST /books': {
+        controller: 'BookController',
+        action: 'addBook'
+    },
+    'PUT /books/:id': {
+        controller: 'BookController',
+        action: 'updateBook'
+    },
+    'DELETE /books/:id': {
+        controller: 'BookController',
+        action: 'removeBook'
+    },
+    'POST /users': {
+        controller: 'UserController',
+        action: 'signup'
+    },
+    'POST /users/login': {
+        controller: 'AuthController',
+        action: 'login'
+    },
+    ' /logout': {
+        controller: 'AuthController',
+        action: 'logout'
+    },
+    'POST /books/:id/rate': {
+        controller: 'RatingController',
+        action: 'rate'
+    }
 
 
-  /***************************************************************************
-  *                                                                          *
-  * Custom routes here...                                                    *
-  *                                                                          *
-  * If a request to a URL doesn't match any of the custom routes above, it   *
-  * is matched against Sails route blueprints. See `config/blueprints.js`    *
-  * for configuration options and examples.                                  *
-  *                                                                          *
-  ***************************************************************************/
+    /***************************************************************************
+     *                                                                          *
+     * Custom routes here...                                                    *
+     *                                                                          *
+     * If a request to a URL doesn't match any of the custom routes above, it   *
+     * is matched against Sails route blueprints. See `config/blueprints.js`    *
+     * for configuration options and examples.                                  *
+     *                                                                          *
+     ***************************************************************************/
 
 
 };

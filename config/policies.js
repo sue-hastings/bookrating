@@ -19,15 +19,23 @@
 
 module.exports.policies = {
 
-   // Everything resctricted here
-  'UserController': {
-    'create': true, // We dont need authorization here, allowing public access
-    // '*': false
-  },
+    // Everything resctricted here
+    '*': 'isAuthorized',
+    UserController: {
+        'signup': true, // We dont need authorization here, allowing public access
+        // '*': false
+    },
 
-  'AuthController': {
-    'index': true,
-    '*': ['isAuthorized'] // We dont need authorization here, allowing public access
-  }
+    AuthController: {
+        'login': true,
+        '*': ['isAuthorized'] // We dont need authorization here, allowing public access
+    },
+
+    BookController: {
+        '*': true
+    }
+
+    // RatingController: {
+    //   'rate': 'isAuAthorized'
+    // }
 };
-
