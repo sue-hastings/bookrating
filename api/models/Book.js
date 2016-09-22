@@ -7,18 +7,40 @@
 
 module.exports = {
     attributes: {
-        name: {
+        title: {
             type: 'string'
         },
         author: {
-            type: 'string'
+            model: 'user'
+        },
+        description: {
+          type: 'string',
+          defaultsTo: ''
         },
         pictureUrl: {
             type: 'string'
+        },
+        ratings: {
+          collection: 'rating',
+          via: 'book'
         },
         isDeleted: {
             type: 'boolean',
             defaultsTo: false
         }
-    };
-}
+    },
+
+    upvotes: function(){
+      var upvotes = _.filter(this.ratings, function(rating) {
+        return rating.ratingType === 'upvote';
+      });
+      return upvotes;
+    },
+
+    downvotes: function(){
+      var downvotes = _.filter(this.ratings, function(rating) {
+        return rating.ratingType === 'downvote';
+      });
+      return downvotes;
+    }
+};
