@@ -6,21 +6,19 @@
  */
 
 module.exports = {
-
-  attributes: {
-    name: {
-      type: String
-    },
-    author: {
-      type: String
-    },
-    pictureUrl: {
-      type: String
-    },
-    isDeleted: {
-      type: Boolean,
-      defaultsTo: false
+    attributes: {
+        name: {
+            type: 'string'
+        },
+        author: {
+            type: 'string'
+        },
+        pictureUrl: {
+            type: 'string'
+        },
+        isDeleted: {
+            type: 'boolean',
+            defaultsTo: false
+        }
     }
-  }
 };
-
