@@ -54,12 +54,15 @@ module.exports.routes = {
   'DELETE /books/:id': {
     controller: 'BookController',
     action: 'removeBook'
+  },
+  'POST /users': {
+    controller: 'UserController',
+    action: 'signup'
+  },
+  'POST /users/login': {
+    controller: 'AuthController',
+    action: 'index'
   }
-  // 'POST /users': {
-  //   controller: 'UserController',
-  //   action: 'signup'
-  // }
-
 
 
   /***************************************************************************
