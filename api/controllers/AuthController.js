@@ -1,5 +1,5 @@
 module.exports = {
-    index: function(req, res) {
+    login: function(req, res) {
         var email = req.param('email');
         var password = req.param('password');
 
@@ -24,5 +24,9 @@ module.exports = {
                 }
             });
         });
+    },
+    logout: function(req, res) {
+      request.logout();
+      response.json(200,true);
     }
 };
