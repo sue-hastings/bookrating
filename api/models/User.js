@@ -18,9 +18,12 @@ module.exports = {
             required: true
         },
         email: {
+
             type: 'email',
             required: 'true',
             unique: true // Yes unique one
+            required: true,
+
         },
         encryptedPassword: {
             type: 'string'
@@ -40,8 +43,8 @@ module.exports = {
                 if (err) return next(err);
                 values.encryptedPassword = hash;
                 next();
-            })
-        })
+            });
+        });
     },
 
     comparePassword: function(password, user, cb) {
@@ -53,6 +56,6 @@ module.exports = {
             } else {
                 cb(err);
             }
-        })
+        });
     }
 };

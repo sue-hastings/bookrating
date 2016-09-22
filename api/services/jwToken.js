@@ -4,11 +4,10 @@ var jwt = require('jsonwebtoken'),
 module.exports.issue = function(payload) {
     return jwt.sign(
         payload,
-        tokenSecret,
-        {
-            expiresIn: 180*60
-        }
-    );
+        tokenSecret, {
+            expiresIn: 180 * 60
+        );
+    };
 };
 
 module.exports.verify = function(token, callback) {
@@ -23,3 +22,4 @@ module.exports.verify = function(token, callback) {
         }
     );
 };
+
