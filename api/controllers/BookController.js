@@ -8,9 +8,10 @@
 module.exports = {
     addBook: function(req, res) {
         var bookdetails = {
-            name: req.body.name,
+            title: req.body.title,
             author: req.body.author,
-            pictureUrl: req.body.pictureUrl
+            description: req.body.description,
+            pictureUrl: req.body.pictureUrl,
         };
         BookService.addBook(bookdetails, function(book) {
             res.json(book);
