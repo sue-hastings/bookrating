@@ -6,8 +6,8 @@ module.exports.issue = function(payload) {
         payload,
         tokenSecret, {
             expiresIn: 180 * 60
-        );
-    };
+        }
+    );
 };
 
 module.exports.verify = function(token, callback) {
@@ -22,4 +22,3 @@ module.exports.verify = function(token, callback) {
         }
     );
 };
-
