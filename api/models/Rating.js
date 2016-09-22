@@ -1,10 +1,14 @@
 module.exports = {
     attributes: {
         user: {
-            type: 'string'
+            model: 'user'
         },
         book: {
-            type: 'string'
+            model: 'book'
+        },
+        ratingType: {
+          type: 'string',
+          enum: ['upvote', 'downvote']
         }
     }
 };
