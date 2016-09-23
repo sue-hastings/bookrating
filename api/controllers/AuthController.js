@@ -1,7 +1,7 @@
 module.exports = {
     login: function(req, res) {
         var email = req.param('email');
-        var passw
+        var password = req.param('password')
         if (!email || !password) {
             return res.json(401, { err: 'email and password required' });
         }
