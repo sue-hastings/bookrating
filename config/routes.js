@@ -67,7 +67,7 @@ module.exports.routes = {
         controller: 'AuthController',
         action: 'logout'
     },
-    'POST /books/:id/rate': {
+    'POST /books/:bookId/rate': {
         controller: 'RatingController',
         action: 'rate'
     }

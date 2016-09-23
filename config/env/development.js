@@ -17,7 +17,6 @@ module.exports = {
    * environment (see config/connections.js and config/models.js )           *
    ***************************************************************************/
 
-<<<<<<< HEAD
   models: {
     connection: 'someMongoDb'
   }
