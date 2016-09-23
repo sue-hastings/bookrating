@@ -1,7 +1,9 @@
 angular.module("app")
-.factory('auth', function ($localStorage) {
+.factory('auth', function ($localStorage, $http) {
   return {
     login: function(name) {
+      var backendUrl = "localhost:3000";
+      $http.post()
       $localStorage.user = name;
     },
     logout: function() {
