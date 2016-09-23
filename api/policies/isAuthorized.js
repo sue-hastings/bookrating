@@ -7,7 +7,6 @@
 
 module.exports = function(req, res, next) {
     var token;
-
     if (req.headers && req.headers.authorization) {
         var parts = req.headers.authorization.split(' ');
         if (parts.length == 2) {
@@ -27,7 +26,7 @@ module.exports = function(req, res, next) {
     } else {
         return res.json(401, { err: 'No Authorization header was found' });
     }
-
+    console.log('before verify')
     jwToken.verify(token, function(err, token) {
         if (err) return res.json(401, { err: 'Invalid Token!' });
         req.token = token; // This is the decrypted token or the payload you provided
