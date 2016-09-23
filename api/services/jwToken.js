@@ -5,18 +5,20 @@ module.exports.issue = function(payload) {
     return jwt.sign(
         payload,
         tokenSecret, {
-            expiresIn: 180 * 60
+            expiresIn: 2000
         }
     );
 };
 
 module.exports.verify = function(token, callback) {
+
     return jwt.verify(
         token,
-        tokenSecret, {},
+        tokenSecret,
+        {},
         function(err, decodedtoken) {
             if (err) {
-                throw err;
+                console.log(err, "err name");
             }
             return decodedtoken;
         }
