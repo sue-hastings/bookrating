@@ -19,7 +19,11 @@ module.exports = {
     },
     getBooks: function(req, res) {
         BookService.getBooks(function(books) {
-            res.json(books);
+           _.map(books, function(book) {
+                book.upvotes = book.upvotes();
+                book.downvotes = book.downvotes();
+           });
+          res.json(books);
         });
     },
     getBook: function(req, res) {

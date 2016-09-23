@@ -27,20 +27,19 @@ module.exports = {
         isDeleted: {
             type: 'boolean',
             defaultsTo: false
-        }
-    },
-
-    upvotes: function() {
-        var upvotes = _.filter(this.ratings, function(rating) {
+        },
+        upvotes: function() {
+          var upvotes = _.filter(this.ratings, function(rating) {
             return rating.ratingType === 'upvote';
-        });
-        return upvotes;
-    },
+          });
+          return upvotes;
+        },
 
-    downvotes: function() {
-        var downvotes = _.filter(this.ratings, function(rating) {
+        downvotes: function() {
+          var downvotes = _.filter(this.ratings, function(rating) {
             return rating.ratingType === 'downvote';
-        });
-        return downvotes;
+          });
+          return downvotes;
+        }
     }
 };

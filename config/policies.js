@@ -33,11 +33,11 @@ module.exports.policies = {
 
     BookController: {
         '*': true
-    }
+    },
 
-    // RatingController: {
-    //   'rate': 'isAuAthorized'
-    // }
+    RatingController: {
+      '*': true
+    }
   /***************************************************************************
   *                                                                          *
   * Default policy for all controllers and actions (`true` allows public     *
