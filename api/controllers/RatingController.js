@@ -7,7 +7,6 @@
 
 module.exports = {
     rate: function(req, res) {
-        console.log('req', req.token)
         var data = {
             book: req.params.bookId,
             ratingType: req.body.ratingType

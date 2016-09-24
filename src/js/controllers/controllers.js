@@ -57,7 +57,7 @@ angular.module("app").controller("authController", ["$scope", "$window", "$route
         if ($scope.reviews[i].book == $routeParams.id)
           $scope.bookreviews.push($scope.reviews[i]);
       }
-    };
+    }
 
     loadReviews();
 
@@ -97,8 +97,8 @@ angular.module("app").controller("authController", ["$scope", "$window", "$route
       return obj.name == $localStorage.user;
     };
 }])
-.controller("homeController", ["$scope", "$route", "book", "$localStorage", "auth",
-  function ($scope, $route, book, $localStorage, auth) {
+.controller("homeController", ["$scope", "$route", "BookService", "$localStorage", "auth",
+  function ($scope, $route, BookService, $localStorage, auth) {
     $scope.rootPath = globals.serverUrl;
     $scope.books = [];
     $scope.booksResult = [];
@@ -110,6 +110,17 @@ angular.module("app").controller("authController", ["$scope", "$window", "$route
         $scope.books = data;
         $scope.booksResult = data;
       });
+
+    $scope.vote = function(id, type) {
+      BookService.rate(id, type)
+        .success(function(data) {
+          BookService.getBooks()
+          .success(function(data) {
+            $scope.books = data;
+            $scope.booksResult = data;
+          });
+        });
+    };
 
     $scope.search = function() {
       $scope.searchStatus = "Searching...";
@@ -128,4 +139,4 @@ angular.module("app").controller("authController", ["$scope", "$window", "$route
 
     $scope.user = auth.loggedUser();
     $scope.loggedIn = auth.isLoggedIn();
-}])
+}]);
