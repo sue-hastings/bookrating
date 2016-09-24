@@ -39,5 +39,11 @@ module.exports = {
       if(err) throw err;
       next({});
     });
+  },
+  reset: function(next) {
+    Book.update({}, {isDeleted: true}).exec(function(err, book) {
+      if(err) throw err;
+      next({});
+    });
   }
 };

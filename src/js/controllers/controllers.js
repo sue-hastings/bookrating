@@ -1,14 +1,16 @@
-angular.module("app").controller("authController", ["$scope", "$window", "$route", "BookService", "$localStorage", "auth",
-  function ($scope, $window, $route, $BookService, $localStorage, auth) {
+angular.module("app").controller("authController", ["$scope", "$window", "$route", "AuthService", "$localStorage", "auth",
+  function ($scope, $window, $route, $AuthService, $localStorage) {
     $scope.user = auth.loggedUser();
     $scope.loggedIn = auth.isLoggedIn();
 
     $scope.login = function() {
       if ($scope.user !== '') {
-        auth.login($scope.user);
-        $scope.loggedIn = auth.isLoggedIn();
-        $('.uk-modal-close').click();
-        auth.isLoggedIn();
+        AuthService.login($scope.user)
+          .then(function(data) {
+            $scope.loggedIn = AuthService.isLoggedIn();
+            $('.uk-modal-close').click();
+            auth.isLoggedIn();
+          })
       }
     };
 
@@ -17,8 +19,8 @@ angular.module("app").controller("authController", ["$scope", "$window", "$route
       $scope.loggedIn = auth.isLoggedIn();
     };
   }])
-.controller("detailsController", ["$scope", "$window", "$route", "$routeParams", "BookService", "$localStorage", "auth", "$location",
-  function ($scope, $window, $route, $routeParams, $BookService, $localStorage, auth, $location) {
+.controller("detailsController", ["$scope", "$window", "$route", "$routeParams", "BookService", "$localStorage", "AuthService", "$location",
+  function ($scope, $window, $route, $routeParams, $BookService, $localStorage, AuthService, $location) {
     var bookId = $routeParams.id;
     $scope.rootPath = globals.serverUrl;
     $scope.book = {};
@@ -36,11 +38,11 @@ angular.module("app").controller("authController", ["$scope", "$window", "$route
     }
 
     $scope.reviews = [];
-    $scope.user = auth.loggedUser();
-    $scope.loggedIn = auth.isLoggedIn();
+    $scope.user = AuthService.loggedUser();
+    $scope.loggedIn = AuthService.isLoggedIn();
     $scope.allowReviews = false;
-    if (auth.isLoggedIn())
-      $scope.allowReviews = auth.isLoggedIn();
+    if (AuthService.isLoggedIn())
+      $scope.allowReviews = AuthService.isLoggedIn();
 
     if (!$localStorage.reviews)
       $localStorage.reviews = $scope.reviews;
@@ -97,8 +99,8 @@ angular.module("app").controller("authController", ["$scope", "$window", "$route
       return obj.name == $localStorage.user;
     };
 }])
-.controller("homeController", ["$scope", "$route", "BookService", "$localStorage", "auth",
-  function ($scope, $route, BookService, $localStorage, auth) {
+.controller("homeController", ["$scope", "$route", "BookService", "$localStorage", "AuthService",
+  function ($scope, $route, BookService, $localStorage, $AuthService) {
     $scope.rootPath = globals.serverUrl;
     $scope.books = [];
     $scope.booksResult = [];
@@ -137,6 +139,6 @@ angular.module("app").controller("authController", ["$scope", "$window", "$route
       $scope.searchStatus = "Search";
     };
 
-    $scope.user = auth.loggedUser();
-    $scope.loggedIn = auth.isLoggedIn();
+    $scope.user = AuthService.loggedUser();
+    $scope.loggedIn = AuthService.isLoggedIn();
 }]);

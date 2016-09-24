@@ -70,6 +70,10 @@ module.exports.routes = {
     'POST /books/:bookId/rate': {
         controller: 'RatingController',
         action: 'rate'
+    },
+    'POST /reset': {
+      controller: 'BookController',
+      action: 'reset'
     }
 
 

@@ -47,5 +47,10 @@ module.exports = {
         BookService.removeBook(id, function(success) {
             res.json(success);
         });
+    },
+    reset: function(req, res) {
+        BookService.reset(function(success) {
+            res.json(success);
+        });
     }
 };

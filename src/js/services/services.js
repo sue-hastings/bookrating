@@ -1,21 +1,42 @@
 angular.module("app")
-.factory('auth', function ($localStorage, $http) {
+.factory('AuthService', function ($localStorage, $q, $http) {
   return {
     login: function(data) {
+      var deffered = $q.defer(;)
       var backendUrl = "http://localhost:1337";
-      return $http.post(backendUrl, data);
-      // $localStorage.user = name;
+      $http.post(backendUrl + '/login', data)
+        .success(function( response) {
+          $localStorage.token = response.token;
+          $localStorage.name = response.name;
+          deffered.resolve(result);
+        })
+        .error(function(err) {
+          deffered.resolve(err);
+        })
+        return deffered.promise;
     },
     logout: function() {
-      $localStorage.user = '';
+      $localStorage.token = '';
+      $localStorage.name = '';
     },
     loggedUser: function() {
-      return $localStorage.user;
+      return $localStorage.name;
+    },
+    getToken: function() {
+      return $localStorage.token;
     },
     isLoggedIn: function() {
-      return ($localStorage.user && $localStorage.user !== '');
+      return ($localStorage.token && $localStorage.token !== '');
     }
   };
+})
+.factory('AuthInterceptor', function(AuthService) {
+  var interceptor = {};
+  interceptor.request = function(config) {
+    config.headers['Authorization'] = 'Bearer ' + AuthService.getToken()
+    return config;
+  }
+  return interceptor;
 })
 .factory('BookService', function($http) {
   return {

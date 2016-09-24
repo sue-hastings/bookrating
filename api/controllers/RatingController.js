@@ -13,8 +13,10 @@ module.exports = {
         };
         RatingService.rate(data, function(err, rating) {
             if (err) {
+              console.log('error', err)
                 throw err;
             }
+            console.log('XXXXX', rating);
             res.json(rating);
         });
     }

@@ -37,10 +37,11 @@ module.exports.policies = {
     AuthController: {
         'login': true,
         '*': ['isAuthorized'] // We dont need authorization here, allowing public access
+    },
+
+    RatingController: {
+      'rate': 'isAuAthorized'
     }
-    // RatingController: {
-    //   'rate': 'isAuAthorized'
-    // }
     /***************************************************************************
      *                                                                          *
      * Default policy for all controllers and actions (`true` allows public     *
