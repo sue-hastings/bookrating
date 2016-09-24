@@ -1,10 +1,10 @@
-angular.module("app").controller("authController", ["$scope", "$window", "$route", "book", "$localStorage", "auth",
-  function ($scope, $window, $route, book, $localStorage, auth) {
+angular.module("app").controller("authController", ["$scope", "$window", "$route", "BookService", "$localStorage", "auth",
+  function ($scope, $window, $route, $BookService, $localStorage, auth) {
     $scope.user = auth.loggedUser();
     $scope.loggedIn = auth.isLoggedIn();
 
     $scope.login = function() {
-      if ($scope.user != '') {
+      if ($scope.user !== '') {
         auth.login($scope.user);
         $scope.loggedIn = auth.isLoggedIn();
         $('.uk-modal-close').click();
@@ -17,13 +17,13 @@ angular.module("app").controller("authController", ["$scope", "$window", "$route
       $scope.loggedIn = auth.isLoggedIn();
     };
   }])
-.controller("detailsController", ["$scope", "$window", "$route", "$routeParams", "book", "$localStorage", "auth", "$location",
-  function ($scope, $window, $route, $routeParams, book, $localStorage, auth, $location) {
+.controller("detailsController", ["$scope", "$window", "$route", "$routeParams", "BookService", "$localStorage", "auth", "$location",
+  function ($scope, $window, $route, $routeParams, $BookService, $localStorage, auth, $location) {
     var bookId = $routeParams.id;
     $scope.rootPath = globals.serverUrl;
     $scope.book = {};
 
-    book.getBooks()
+    BookService.getBooks()
       .success(function(data) {
         loadBook(data);
       });
@@ -42,11 +42,11 @@ angular.module("app").controller("authController", ["$scope", "$window", "$route
     if (auth.isLoggedIn())
       $scope.allowReviews = auth.isLoggedIn();
 
-    if (!$localStorage.reviews) 
+    if (!$localStorage.reviews)
       $localStorage.reviews = $scope.reviews;
     else
       $scope.reviews = $localStorage.reviews;
-    
+
 
     $scope.bookreviews = [];
     function loadReviews() {
@@ -105,7 +105,7 @@ angular.module("app").controller("authController", ["$scope", "$window", "$route
     $scope.query = '';
     $scope.searchStatus = "Search";
 
-    book.getBooks()
+    BookService.getBooks()
       .success(function(data) {
         $scope.books = data;
         $scope.booksResult = data;

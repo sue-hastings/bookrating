@@ -1,7 +1,7 @@
 module.exports = {
   getBooks: function(next) {
     var toOmit = ['isDeleted'];
-    Book.find({isDeleted: false}).exec(function(err, books) {
+    Book.find({isDeleted: false}).populate('ratings').exec(function(err, books) {
       if(err) throw err;
 
       books = _.map(books, function(book) {
@@ -12,7 +12,7 @@ module.exports = {
   },
   getBook: function(id, next) {
     var toOmit = ['isDeleted'];
-    Book.findOne({id: id, isDeleted: false}).exec(function(err, book) {
+    Book.findOne({id: id, isDeleted: false}).populate('ratings').exec(function(err, book) {
       if(err) throw err;
       book = _.omit(book, toOmit);
       next(book);
