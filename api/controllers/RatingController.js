@@ -9,14 +9,13 @@ module.exports = {
     rate: function(req, res) {
         var data = {
             book: req.params.bookId,
-            ratingType: req.body.ratingType
+            ratingType: req.body.ratingType,
+            user: req.token.id
         };
         RatingService.rate(data, function(err, rating) {
             if (err) {
-              console.log('error', err)
                 throw err;
             }
-            console.log('XXXXX', rating);
             res.json(rating);
         });
     }

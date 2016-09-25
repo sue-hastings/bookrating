@@ -2,17 +2,17 @@ angular.module("app")
 .factory('AuthService', function ($localStorage, $q, $http) {
   return {
     login: function(data) {
-      var deffered = $q.defer(;)
+      var deffered = $q.defer();
       var backendUrl = "http://localhost:1337";
-      $http.post(backendUrl + '/login', data)
+      $http.post(backendUrl + '/users/login', data)
         .success(function( response) {
           $localStorage.token = response.token;
-          $localStorage.name = response.name;
-          deffered.resolve(result);
+          $localStorage.name = response.user.username;
+          deffered.resolve(response);
         })
         .error(function(err) {
           deffered.resolve(err);
-        })
+        });
         return deffered.promise;
     },
     logout: function() {
@@ -30,12 +30,12 @@ angular.module("app")
     }
   };
 })
-.factory('AuthInterceptor', function(AuthService) {
+.factory('AuthInterceptor', function($localStorage) {
   var interceptor = {};
   interceptor.request = function(config) {
-    config.headers['Authorization'] = 'Bearer ' + AuthService.getToken()
+    config.headers.Authorization = 'Bearer ' + $localStorage.token;
     return config;
-  }
+  };
   return interceptor;
 })
 .factory('BookService', function($http) {

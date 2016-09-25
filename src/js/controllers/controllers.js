@@ -1,7 +1,7 @@
-angular.module("app").controller("authController", ["$scope", "$window", "$route", "AuthService", "$localStorage", "auth",
-  function ($scope, $window, $route, $AuthService, $localStorage) {
-    $scope.user = auth.loggedUser();
-    $scope.loggedIn = auth.isLoggedIn();
+angular.module("app").controller("authController", ["$scope", "$window", "$route", "AuthService", "$localStorage",
+  function ($scope, $window, $route, AuthService, $localStorage) {
+    $scope.user = AuthService.loggedUser();
+    $scope.loggedIn = AuthService.isLoggedIn();
 
     $scope.login = function() {
       if ($scope.user !== '') {
@@ -9,14 +9,14 @@ angular.module("app").controller("authController", ["$scope", "$window", "$route
           .then(function(data) {
             $scope.loggedIn = AuthService.isLoggedIn();
             $('.uk-modal-close').click();
-            auth.isLoggedIn();
-          })
+            AuthService.isLoggedIn();
+          });
       }
     };
 
     $scope.logout = function() {
-      auth.logout();
-      $scope.loggedIn = auth.isLoggedIn();
+      AuthService.logout();
+      $scope.loggedIn = AuthService.isLoggedIn();
     };
   }])
 .controller("detailsController", ["$scope", "$window", "$route", "$routeParams", "BookService", "$localStorage", "AuthService", "$location",
@@ -66,7 +66,7 @@ angular.module("app").controller("authController", ["$scope", "$window", "$route
     $scope.review = {};
     $scope.review.book = $routeParams.id;
     $scope.submit = function() {
-      $scope.review.name = auth.loggedUser();
+      $scope.review.name = AuthService.loggedUser();
       $scope.review.comment = $scope.comment;
       $localStorage.reviews.push($scope.review);
       loadReviews();
@@ -88,7 +88,7 @@ angular.module("app").controller("authController", ["$scope", "$window", "$route
     };
 
     $scope.logout = function() {
-      auth.logout();
+      AuthService.logout();
       $location.path('home');
     };
 
@@ -100,7 +100,7 @@ angular.module("app").controller("authController", ["$scope", "$window", "$route
     };
 }])
 .controller("homeController", ["$scope", "$route", "BookService", "$localStorage", "AuthService",
-  function ($scope, $route, BookService, $localStorage, $AuthService) {
+  function ($scope, $route, BookService, $localStorage, AuthService) {
     $scope.rootPath = globals.serverUrl;
     $scope.books = [];
     $scope.booksResult = [];

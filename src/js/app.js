@@ -1,14 +1,13 @@
 angular.module("app", [
   'ngRoute',
-  'ngCookies', 
+  'ngCookies',
   'ngStorage',
-  'ngSanitize', 
+  'ngSanitize',
   'ngEmoticons'
 ])
-.config(['$routeProvider', '$locationProvider', 
-  function ($routeProvider, $locationProvider) {
+.config(['$routeProvider', '$locationProvider', '$httpProvider',
+  function ($routeProvider, $locationProvider, $httpProvider) {
     $locationProvider.html5Mode(true);
-
     $routeProvider
       .when('/', {
         templateUrl: 'src/views/home.html',
@@ -18,6 +17,7 @@ angular.module("app", [
         templateUrl: 'src/views/details.html',
         controller: 'detailsController'
       });
+      $httpProvider.interceptors.push('AuthInterceptor');
 }]);
 
 var globals = {};
