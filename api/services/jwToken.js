@@ -10,7 +10,7 @@ module.exports.issue = function(payload) {
     );
 };
 
-module.exports.verify = function(token, callback) {
+module.exports.verify = function(token, next) {
 
     return jwt.verify(
         token,
@@ -18,9 +18,9 @@ module.exports.verify = function(token, callback) {
         {},
         function(err, decodedtoken) {
             if (err) {
-                console.log(err, "err name");
+                throw err;
             }
-            return decodedtoken;
+            return next(null, decodedtoken);
         }
     );
 };

@@ -25,12 +25,12 @@ module.exports.policies = {
     },
 
     RatingController: {
-        '*': true
+        'rate': 'isAuthorized'
     },
 
     // Everything resctricted here
     UserController: {
-        'signup': true, // We dont need authorization here, allowing public access
+        '*': true, // We dont need authorization here, allowing public access
         // '*': false
     },
 
@@ -42,6 +42,9 @@ module.exports.policies = {
     RatingController: {
       'rate': 'isAuthorized'
     }
+    // RatingController: {
+    //   'rate': 'isAuthorized'
+    // }
     /***************************************************************************
      *                                                                          *
      * Default policy for all controllers and actions (`true` allows public     *
