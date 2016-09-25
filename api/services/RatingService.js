@@ -24,23 +24,4 @@ module.exports = {
             }
         });
     }
-
-    // Book.findOne({ id: bookId }).exec(function(err, book) {
-    //     if (err) {
-    //       console.log('err1', err);
-    //       throw err;
-    //     }
-    //     if (book) {
-    //         Rating.create({ book: book, ratingType: ratingType }).exec(function(err, rating) {
-    //             if (err) {
-    //               console.log('err2', err);
-    //               throw err;
-    //             }
-    //             console.log('rated', rating)
-    //             return next(null, rating);
-    //         });
-    //     } else {
-    //         return next();
-    //     }
-    // });
 };

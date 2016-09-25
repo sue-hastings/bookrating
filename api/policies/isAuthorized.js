@@ -28,7 +28,7 @@ module.exports = function(req, res, next) {
     }
     jwToken.verify(token, function(err, token) {
         if (err) {
-          return res.json(401, { err: 'Invalid Token!' });
+            return res.json(401, { err: 'Invalid Token!' });
         }
         req.token = token; // This is the decrypted token or the payload you provided
         next();
