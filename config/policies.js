@@ -40,7 +40,7 @@ module.exports.policies = {
     },
 
     RatingController: {
-      'rate': 'isAuAthorized'
+      'rate': 'isAuthorized'
     }
     /***************************************************************************
      *                                                                          *
