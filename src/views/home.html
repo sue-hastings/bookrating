@@ -1,37 +1,34 @@
 <div ng-include="'src/partials/auth.partial.html'"></div>
-
 <div class="pure-g mt-lg">
-  <div class="pure-u-1 pure-u-sm-1 pure-u-md-1 pure-u-lg-1-4"></div>
-  <div class="pure-u-1 pure-u-sm-1 pure-u-md-1 pure-u-lg-2-3">
-    <form class="pure-form">
-      <div class="pure-g">
-        <div class="pure-u-1 pure-u-sm-1 pure-u-md-1"></div>
-        <div class="pure-u-1 pure-u-sm-1 pure-u-md-1 pure-u-lg-1 mb-sm">
-          <div class="inner">
-            <input type="text" placeholder="Search" ng-model="query" class="pure-u-1 pure-u-sm-2-3 pure-u-md-2-3 pure-u-lg-2-3">
-            <button type="submit" class="bg fg pure-button" ng-click="search()">
-              <i class="fa fa-search fw">&nbsp;</i>{{searchStatus}}
-            </button>
-          </div>
-        </div>
-        <div class="pure-u-1 pure-u-sm-1 pure-u-md-1"></div>
-      </div>
-    </form>
-  </div>
-  <div class="pure-u-1 pure-u-sm-1 pure-u-md-1 pure-u-lg-1-4"></div>
-</div>
-
-<div class="pure-g"">
-  <div class="pure-u-1 pure-u-sm-1 pure-u-md-1 pure-u-lg-1-5"></div>
-  <div class="pure-u-1 pure-u-sm-1 pure-u-md-1 pure-u-lg-3-5">
-    <p class="inner book-total">{{booksResult.length}} book(s)
-    </p>
-    <div class="pure-u-1-2 pure-u-sm-1-3 pure-u-md-1-4 pure-u-lg-4-24" ng-repeat="bk in booksResult">
-      {{bk.title}} <button ng-click=vote(bk.id,'upvote')>upvote({{bk.upvotes.length}}) </button> <button ng-click=vote(bk.id,'downvote')>downvote({{bk.downvotes.length}}) </button>
-      <div class="inner">
-       <a href="details/{{bk.id}}"><img class="pure-img-responsive" ng-src="{{bk.pictureUrl}}"></a>
-      </div>
+    <div class="pure-u-1 pure-u-sm-1 pure-u-md-1 pure-u-lg-1-4"></div>
+    <div class="pure-u-1 pure-u-sm-1 pure-u-md-1 pure-u-lg-2-3">
+        <form class="pure-form">
+            <div class="pure-g">
+                <div class="pure-u-1 pure-u-sm-1 pure-u-md-1"></div>
+                <div class="pure-u-1 pure-u-sm-1 pure-u-md-1 pure-u-lg-1 mb-sm">
+                    <div class="inner">
+                        <input type="text" placeholder="Search" ng-model="query" class="pure-u-1 pure-u-sm-2-3 pure-u-md-2-3 pure-u-lg-2-3">
+                        <button type="submit" class="bg fg pure-button" ng-click="search()">
+                            <i class="fa fa-search fw">&nbsp;</i>{{searchStatus}}
+                        </button>
+                    </div>
+                </div>
+                <div class="pure-u-1 pure-u-sm-1 pure-u-md-1"></div>
+            </div>
+        </form>
     </div>
-  </div>
-  <div class="pure-u-1 pure-u-sm-1 pure-u-md-1 pure-u-lg-1-5"></div>
+    <div class="pure-u-1 pure-u-sm-1 pure-u-md-1 pure-u-lg-1-4"></div>
+</div>
+<div class="pure-g">
+    <div class="pure-u-1 pure-u-sm-1 pure-u-md-1 pure-u-lg-1-5"></div>
+    <div class="pure-u-1 pure-u-sm-1 pure-u-md-1 pure-u-lg-3-5">
+        <p class="inner book-total">{{booksResult.length}} book(s)
+        </p>
+        <div class="pure-u-1-2 pure-u-sm-1-3 pure-u-md-1-4 pure-u-lg-4-24" ng-repeat="bk in booksResult">
+            <div class="inner">
+                <a href="details/{{bk.id}}"><img class="pure-img-responsive" ng-src="{{bk.pictureUrl}}"></a>
+            </div>
+        </div>
+    </div>
+    <div class="pure-u-1 pure-u-sm-1 pure-u-md-1 pure-u-lg-1-5"></div>
 </div>

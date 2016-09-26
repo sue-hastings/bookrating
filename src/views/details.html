@@ -1,71 +1,62 @@
 <div class="pure-g">
-  <div class="pure-u-1 right">
-    <div class="inner">
-      <span ng-show="loggedIn">Welcome {{user}}</span>
-
-      <a href="/" class="bg right pure-button pure-button-primary button-small">
-        <i class="fa fa-home fw"></i>
-        Home
-      </a>
-      <a ng-show="loggedIn" ng-click="logout()" class="pure-button button-error button-small">
-        <i class="fa fa-lock fw"></i>
-        Logout
-      </a>
-
+    <div class="pure-u-1 right">
+        <div class="inner">
+            <span ng-show="loggedIn">Welcome {{user}}</span>
+            <a href="/" class="bg right pure-button pure-button-primary button-small">
+                <i class="fa fa-home fw"></i> Home
+            </a>
+            <a ng-show="loggedIn" ng-click="logout()" class="pure-button button-error button-small">
+                <i class="fa fa-lock fw"></i> Logout
+            </a>
+        </div>
     </div>
-  </div>
 </div>
-
 <div class="pure-g mt">
-  <div class="pure-u-1 pure-u-sm-1 pure-u-md-1 pure-u-lg-1-5"></div>
-  <div class="pure-u-1 pure-u-sm-1 pure-u-md-1 pure-u-lg-3-5">
-
-    <div class="pure-g">
-      <div class="pure-u-1 pure-u-sm-1 pure-u-md-1 pure-u-lg-1-4">
-        <div class="inner">
-          <img class="pure-img-responsive" src="{{rootPath + book.image}}">
-        </div>
-      </div>
-      <div class="pure-u-1 pure-u-sm-1 pure-u-md-1 pure-u-lg-3-4">
-        <div class="inner">
-          <h2>{{book.title}}</h2>
-          <span class="book-author">by {{book.author}}</span>
-          <p class="book-description">{{book.description}}</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="pure-g">
-      <div class="pure-u-1 pure-u-sm-1 pure-u-md-1 pure-u-lg-1-4"> </div>
-      <div class="pure-u-1 pure-u-sm-1 pure-u-md-1 pure-u-lg-3-4">
-        <div class="inner">
-
-          <form class="pure-form pure-form-stacked" ng-show="allowReviews" style="font-size: 15px;">
-            <label>Write a review</label>
-            <textarea class="pure-u-1 pure-u-sm-1 pure-u-md-1-1 pure-u-lg-24-24" ng-model="comment" placeholder="Write your comment"></textarea>
-            <button type="submit" class="pure-button pure-button-primary button-small" style="margin-top: 5px;" ng-click="submit()">
-              <i class="fa fa-comment fw"></i>
-              Submit
-            </button>
-          </form>
-
-          <p style="font-size: 12px; margin-top: 35px;"></p>
-          <span style="font-size: 12px;">{{bookreviews.length}} Reviews</span>
-
-          <hr>
-
-          <div ng-repeat="rev in bookreviews" class="book-reviews">
-            <p style="font-weight: bold;">{{rev.name}}<p>
-            <p style="font-family: serif" ng-bind-html="rev.comment | emoticons:{linkTarget:'_blank'}"></p>
-            <div ng-show="isOwner(rev)" class="right">
-              <button class="pure-button button-small button-success">Edit</button>
-              <button title="Delete" ng-click="delete($index)" class="pure-button button-small button-error">Delete</button>
+    <div class="pure-u-1 pure-u-sm-1 pure-u-md-1 pure-u-lg-1-5"></div>
+    <div class="pure-u-1 pure-u-sm-1 pure-u-md-1 pure-u-lg-3-5">
+        <div class="pure-g">
+            <div class="pure-u-1 pure-u-sm-1 pure-u-md-1 pure-u-lg-1-4">
+                <div class="inner">
+                    <img class="pure-img-responsive" src="{{book.pictureUrl}}">
+                </div>
             </div>
-          </div>
+            <div class="pure-u-1 pure-u-sm-1 pure-u-md-1 pure-u-lg-3-4">
+                <div class="inner">
+                    <h2>{{book.title}}</h2>
+                    <span class="book-author">by {{book.author}}</span>
+                    <p class="book-description">{{book.description}}</p>
+                    <div class="votes">
+                        <span class="votes" aria-hidden="true" ng-click="vote(book.id, 'upvote')"><i class="fa fa-thumbs-o-up fa-lg"></i>{{book.upvotes.length}}</span>
+                        <span aria-hidden="true" ng-click="vote(book.id, 'downvote')"><i class="fa fa-thumbs-o-down fa-lg"></i>{{book.downvotes.length}}</span>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+        <div class="pure-g">
+            <div class="pure-u-1 pure-u-sm-1 pure-u-md-1 pure-u-lg-1-4"> </div>
+            <div class="pure-u-1 pure-u-sm-1 pure-u-md-1 pure-u-lg-3-4">
+                <form class="pure-form pure-form-stacked" ng-show="allowReviews" style="font-size: 15px;">
+                    <label>Write a review</label>
+                    <textarea class="pure-u-1 pure-u-sm-1 pure-u-md-1-1 pure-u-lg-24-24" ng-model="comment" placeholder="Write your comment"></textarea>
+                    <button type="submit" class="pure-button pure-button-primary button-small" style="margin-top: 5px;" ng-click="submit()">
+                        <i class="fa fa-comment fw"></i> Submit
+                    </button>
+                </form>
+                <p style="font-size: 12px; margin-top: 35px;"></p>
+                <span style="font-size: 12px;">{{bookreviews.length}} Reviews</span>
+                <hr>
+                <div ng-repeat="rev in bookreviews" class="book-reviews">
+                    <p style="font-weight: bold;">{{rev.name}}
+                        <p>
+                            <p style="font-family: serif" ng-bind-html="rev.comment | emoticons:{linkTarget:'_blank'}"></p>
+                            <div ng-show="isOwner(rev)" class="right">
+                                <button class="pure-button button-small button-success">Edit</button>
+                                <button title="Delete" ng-click="delete($index)" class="pure-button button-small button-error">Delete</button>
+                            </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-  </div>
-  <div class="pure-u-1 pure-u-sm-1 pure-u-md-1 pure-u-lg-1-5"></div>
+</div>
+<div class="pure-u-1 pure-u-sm-1 pure-u-md-1 pure-u-lg-1-5"></div>
 </div>
