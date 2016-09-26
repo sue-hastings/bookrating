@@ -3,7 +3,10 @@ angular.module("app", [
   'ngCookies',
   'ngStorage',
   'ngSanitize',
-  'ngEmoticons'
+  'ngEmoticons',
+  'ngMaterial',
+  'ngAnimate',
+  'ngAria'
 ])
 .config(['$routeProvider', '$locationProvider', '$httpProvider',
   function ($routeProvider, $locationProvider, $httpProvider) {
