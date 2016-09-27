@@ -19,8 +19,8 @@ module.exports = {
     connections: {
         mongoLive: {
             adapter: 'sails-mongo',
-            host: 'host.mongolab.com',
-            port: 31681,
+            host: 'ds041526.mlab.com',
+            port: 41526,
             user: 'susan.adelokiki',
             password: 'bookrating',
             database: 'bookrating'
