@@ -21,8 +21,8 @@ module.exports = {
             adapter: 'sails-mongo',
             host: 'ds041526.mlab.com',
             port: 41526,
-            user: 'susan.adelokiki',
-            password: 'bookrating',
+            user: 'admin',
+            password: 'password',
             database: 'bookrating'
         }
     },
