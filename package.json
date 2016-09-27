@@ -6,6 +6,7 @@
   "keywords": [],
   "dependencies": {
     "angular-material": "^1.1.1",
+    "angular-ui-router": "^0.3.1",
     "bcrypt": "^0.8.7",
     "ejs": "2.3.4",
     "grunt": "1.0.1",
@@ -22,6 +23,7 @@
     "grunt-sync": "0.5.2",
     "include-all": "~0.1.6",
     "jsonwebtoken": "^7.1.9",
+    "jshint": "^2.8.0",
     "lodash": "^4.16.0",
     "rc": "1.0.1",
     "sails": "~0.12.4",
