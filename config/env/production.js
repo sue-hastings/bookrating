@@ -17,7 +17,7 @@ module.exports = {
      * environment (see config/connections.js and config/models.js )           *
      ***************************************************************************/
     connections: {
-        mongoLive: {
+        mongo: {
             adapter: 'sails-mongo',
             host: 'ds041526.mlab.com',
             port: 41526,
@@ -27,7 +27,7 @@ module.exports = {
         }
     },
     models: {
-        connection: 'mongoLive'
+        connection: 'mongo'
     },
     port: 3000,
     // models: {
