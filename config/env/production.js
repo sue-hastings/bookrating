@@ -12,27 +12,40 @@
 
 module.exports = {
 
-  /***************************************************************************
-   * Set the default database connection for models in the production        *
-   * environment (see config/connections.js and config/models.js )           *
-   ***************************************************************************/
+    /***************************************************************************
+     * Set the default database connection for models in the production        *
+     * environment (see config/connections.js and config/models.js )           *
+     ***************************************************************************/
+    connections: {
+        mongoLive: {
+            adapter: 'sails-mongo',
+            host: 'host.mongolab.com',
+            port: 31681,
+            user: 'susan.adelokiki',
+            password: 'bookrating',
+            database: 'bookrating'
+        }
+    },
+    models: {
+        connection: 'mongoLive'
+    },
+    port: 3000,
+    // models: {
+    //   connection: 'someMysqlServer'
+    // },
 
-  // models: {
-  //   connection: 'someMysqlServer'
-  // },
+    /***************************************************************************
+     * Set the port in the production environment to 80                        *
+     ***************************************************************************/
 
-  /***************************************************************************
-   * Set the port in the production environment to 80                        *
-   ***************************************************************************/
+    // port: 80,
 
-  // port: 80,
+    /***************************************************************************
+     * Set the log level in production environment to "silent"                 *
+     ***************************************************************************/
 
-  /***************************************************************************
-   * Set the log level in production environment to "silent"                 *
-   ***************************************************************************/
-
-  // log: {
-  //   level: "silent"
-  // }
+    // log: {
+    //   level: "silent"
+    // }
 
 };
