@@ -11,14 +11,14 @@ describe('Book', function() {
                     "description": "All about Rings",
                     "pictureUrl": "ringsurl",
                 }
-            })
+            });
             req.end(function(err, res) {
                 if (err) {
                     throw err;
                 }
                 console.log(res.text);
                 done();
-            })
+            });
         }),
         it('read list of books and return success', function(done) {
             var req = request.get('books')
@@ -33,7 +33,7 @@ describe('Book', function() {
                 data: {
                     title: "Lord of the Rings 2"
                 }
-            })
+            });
             req.end(function(err, res) {
                 if (err) {
                     console.log(err);
@@ -41,7 +41,7 @@ describe('Book', function() {
                 }
                 console.log(res.text);
                 done();
-            })
+            });
         }),
         it('deletes an existing book', function(done) {
             var req = request.post('books/:id');
@@ -49,7 +49,7 @@ describe('Book', function() {
                 data: {
                     title: "Lord of the Rings 2"
                 }
-            })
+            });
             req.end(function(err, res) {
                 if (err) {
                     console.log(err);
@@ -57,6 +57,6 @@ describe('Book', function() {
                 }
                 console.log(res.text);
                 done();
-            })
-        })
-})
+            });
+        });
+});

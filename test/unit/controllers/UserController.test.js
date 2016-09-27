@@ -15,4 +15,4 @@ describe('UserController', function() {
                 .expect(200, done);
         });
     });
-})
+});
