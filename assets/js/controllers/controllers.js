@@ -1,5 +1,5 @@
-angular.module("app").controller("authController", ["$scope", "$window", "$route", "AuthService", "$localStorage", "$mdToast", "ToastService",
-    function($scope, $window, $route, AuthService, $localStorage, $mdToast, ToastService) {
+angular.module("app").controller("authController", ["$scope", "$window", "$state", "AuthService", "$localStorage", "$mdToast", "ToastService",
+    function($scope, $window, $state, AuthService, $localStorage, $mdToast, ToastService) {
         $scope.user = AuthService.loggedUser();
         $scope.loggedIn = AuthService.isLoggedIn();
 
@@ -41,14 +41,12 @@ angular.module("app").controller("authController", ["$scope", "$window", "$route
     }
 ])
 
-.controller("detailsController", ["$scope", "$window", "$route", "$routeParams", "BookService", "$localStorage", "AuthService", "$location", "$mdToast", "ToastService", "$http",
-
-        function($scope, $window, $route, $routeParams, BookService, $localStorage, AuthService, $location, $mdToast, ToastService, $http) {
-            var bookId = $routeParams.id;
+.controller("detailsController", ["$scope", "$window", "$state", "$stateParams", "BookService", "$localStorage", "AuthService", "$location", "$mdToast", "ToastService", "$http",
+        function($scope, $window, $state, $stateParams, BookService, $localStorage, AuthService, $location, $mdToast, ToastService, $http) {
+            var bookId = $stateParams.id;
             $scope.book = {};
             $scope.books = [];
             $scope.booksResult = [];
-
             BookService.getBooks()
                 .success(function(data) {
                     loadBook(data);
@@ -81,7 +79,7 @@ angular.module("app").controller("authController", ["$scope", "$window", "$route
                 $scope.bookreviews = [];
 
                 for (var i = $scope.reviews.length - 1; i >= 0; i--) {
-                    if ($scope.reviews[i].book == $routeParams.id)
+                    if ($scope.reviews[i].book == $stateParams.id)
                         $scope.bookreviews.push($scope.reviews[i]);
                 }
             }
@@ -89,7 +87,7 @@ angular.module("app").controller("authController", ["$scope", "$window", "$route
             loadReviews();
 
             $scope.review = {};
-            $scope.review.book = $routeParams.id;
+            $scope.review.book = $stateParams.id;
             $scope.submit = function() {
                 $scope.review.name = AuthService.loggedUser();
                 $scope.review.comment = $scope.comment;
@@ -114,7 +112,7 @@ angular.module("app").controller("authController", ["$scope", "$window", "$route
 
             $scope.vote = function(id, type) {
                 if (!AuthService.isLoggedIn()) {
-                    ToastService.showToast('You are not authorised to rate!, Login')
+                    ToastService.showToast('You are not authorised to rate!, Login');
                     $location.path('/');
                 }
                 BookService.rate(id, type)
@@ -143,8 +141,8 @@ angular.module("app").controller("authController", ["$scope", "$window", "$route
             };
         }
     ])
-    .controller("homeController", ["$scope", "$route", "BookService", "$localStorage", "AuthService", "$http",
-        function($scope, $route, BookService, $localStorage, AuthService, $http) {
+    .controller("homeController", ["$scope", "$state", "BookService", "$localStorage", "AuthService", "$http",
+        function($scope, $state, BookService, $localStorage, AuthService, $http) {
             $scope.rootPath = globals.serverUrl;
             $scope.books = [];
             $scope.booksResult = [];

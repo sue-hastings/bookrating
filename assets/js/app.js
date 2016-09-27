@@ -1,33 +1,34 @@
 angular.module("app", [
-        'ngRoute',
         'ngCookies',
         'ngStorage',
         'ngSanitize',
         'ngEmoticons',
         'ngMaterial',
         'ngAnimate',
-        'ngAria'
+        'ngAria',
+        'ui.router'
     ])
-    .config(['$routeProvider', '$locationProvider', '$httpProvider',
-        function($routeProvider, $locationProvider, $httpProvider) {
+    .config(['$stateProvider', '$locationProvider', '$httpProvider', '$urlRouterProvider',
+        function($stateProvider, $locationProvider, $httpProvider, $urlRouterProvider) {
             $locationProvider.html5Mode({
                 enabled: true,
                 requireBase: false
             });
-            $routeProvider
-                .when('/', {
-                    templateUrl: 'assets/views/home.html',
+            $urlRouterProvider.otherwise('/');
+            $stateProvider
+                .state('home', {
+                    url: '/',
+                    templateUrl: '../views/home.html',
                     controller: 'homeController'
                 })
-                .when('/details/:id', {
-                    templateUrl: 'assets/views/details.html',
+                .state('details', {
+                    url: '/details/:id',
+                    templateUrl: '../views/details.html',
                     controller: 'detailsController'
                 });
             $httpProvider.interceptors.push('AuthInterceptor');
-
         }
     ]);
-
 
 var globals = {};
 globals.serverUrl = "/server";
