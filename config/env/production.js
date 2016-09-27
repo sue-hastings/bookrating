@@ -23,7 +23,8 @@ module.exports = {
             port: 41526,
             user: 'admin',
             password: 'password',
-            database: 'bookrating'
+            database: 'bookrating',
+            uri_decode_auth: true,
         }
     },
     models: {
